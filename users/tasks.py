@@ -21,7 +21,7 @@ def send_email_staff(self, pk):
 
        
         set_password_path = reverse(
-            "staff-set-password",
+            "users:staff-set-password",
             kwargs={"uuid": uid, "token": token}
         )
 
@@ -47,6 +47,8 @@ def send_email_staff(self, pk):
 
         email.attach_alternative(html_content, "text/html")
         email.send()
+
+        print(f"verificatoin email sent successfully to {user.email}")
 
     except Exception as exc:
         raise self.retry(exc=exc)

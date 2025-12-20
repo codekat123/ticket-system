@@ -1,6 +1,6 @@
 import os
 from celery import Celery
-
+from celery.schedules import crontab 
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'src.settings')
 
@@ -15,3 +15,10 @@ def debug_task(self):
 
 
 
+# app.conf.beat_schedule = {
+#     'refresh_recommendations_every_2_days': {
+#         'task': 'events.tasks.delete_event.delete_events',  
+#         'schedule': crontab(minute=0, hour=12),  
+#         'args': (), 
+#     },
+# }
