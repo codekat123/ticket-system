@@ -4,7 +4,6 @@ from .serializers import EventSerializer
 from users.permissions import IsAdmin
 
 
-
 class EventView(ModelViewSet):
      queryset = Event.objects.all()
      serializer_class = EventSerializer

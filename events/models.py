@@ -22,7 +22,7 @@ class Event(models.Model):
           ]
           constraints = [
             models.UniqueConstraint(
-                fields=['date'],
+                fields=['start_date','end_date'],
                 name='unique_event_date'
             )
         ]
