@@ -13,7 +13,7 @@ class ScanTicketView(APIView):
           ticket.save()          
           return Response(
                {
-                    'message':'the ticket has been scanned susccessfully'
+                    'message':'the ticket has been scanned successfully'
                },
                status=status.HTTP_200_OK
           )

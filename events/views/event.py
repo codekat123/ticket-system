@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
-from .models import Event
-from .serializers import EventSerializer
+from ..models import Event
+from ..serializers import EventSerializer
 from users.permissions import IsAdmin
 
 
