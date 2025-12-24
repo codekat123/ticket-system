@@ -24,7 +24,7 @@ def notify_staff(self, event_id):
         if not staff_emails:
             return
 
-        url = reverse('tickets:book', kwargs={'id': event.id})
+        url = reverse('tickets:book', kwargs={'event_id': event.id})
 
         context = {
             'title': event.title,

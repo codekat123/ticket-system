@@ -3,11 +3,13 @@ from rest_framework.response import Response
 from rest_framework import status
 from ..models import Ticket
 from django.shortcuts import get_object_or_404
+from users.permissions import IsStaff
 
 
 class ScanTicketView(APIView):
+     permission_classes = [IsStaff]
 
-     def post(self,qr_code):
+     def post(self, request, qr_code, *args, **kwargs):
           ticket = get_object_or_404(Ticket,qr_code=qr_code)
           ticket.is_used = True
           ticket.save()          
