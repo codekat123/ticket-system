@@ -61,7 +61,7 @@ TEMPLATES = [
 ]
 
 
-ASGI_APPLICATION = 'src.asgi.application'
+WSGI_APPLICATION = "src.wsgi.application"
 
 
 
@@ -152,14 +152,7 @@ CACHES = {
         },
     }
 }
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
-        },
-    },
-}
+
 
 CELERY_BROKER_URL = os.getenv("REDIS_URL")
 CELERY_RESULT_BACKEND = os.getenv("REDIS_URL")

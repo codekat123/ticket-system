@@ -13,7 +13,7 @@ router = DefaultRouter()
 router.register(r'',EventView,basename='event')
 
 urlpatterns = [
-     path('get-info/<int:id>/',AdminEventDetailView.as_view(),name='get-info')
+     path('get-info/<int:event_id>/',AdminEventDetailView.as_view(),name='get-info')
 ]
 
 urlpatterns += router.urls
